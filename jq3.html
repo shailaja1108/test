@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+        </head>
+        <body>
+<div id="one" >
+
+</div>
+            </body>
+            <script>
+                var a = "";
+                $.get({ 
+                    "url":"https://jsonplaceholder.typicode.com/users",
+                    "success":function(response){
+                    //console.log(response);
+                     response.forEach(function(val,ind) {
+                        // console.log(val.name)
+                        a= a+ "<div class='card'><h2 class='card-header bg-warning'> "+val.id+"</h2><div class='card-body bg-success'> <p>"+val.address.city+"</p></div><p class='card-footer bg-danger'>"+val.email+"</p></div>";            
+                     });
+                    //console.log($("#one"));
+                     $("#one").html(a);
+                    }
+                    
+            })
+
+                </script>
+                </html>
