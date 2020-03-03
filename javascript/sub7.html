@@ -1,0 +1,31 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    
+    </head>
+<body class="b">
+
+    <div id="body"></div>
+    
+    <script>
+        var std;
+       var searchparams=location.search;
+             var URLparams =searchparams.split("=");
+           var id=URLparams[URLparams.length-1];
+var http=new XMLHttpRequest();
+    http.open('GET','https://jsonplaceholder.typicode.com/users/'+id);
+    http.responseType='json';
+    http.send();
+    var a="";
+    http.onload=function(){
+        var std=http.response;
+    a="<div>"+std.id+"</div>"+"<div>"+std.name+"</div>"+"<div>"+std.email+"</div>";
+    document.getElementById("body").innerHTML=a;
+
+    }
+    
+    
+        </script>
+        </body>
+    </html>
+

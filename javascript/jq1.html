@@ -1,0 +1,58 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container bg-secondary d-flex justify-content-between">
+    <img src="#" alt="logo"/>
+    <a href="logout.html">logout</a> 
+</div>
+<div class="container text-right">
+    <button class="btn btn-success mt-4" id="abc" onclick="display()">Generate</button> 
+    </div>
+    <div class="container h-9 w-5">
+    <table class="table table-stripped">
+        <thead>
+        <tr class="text-white bg-primary">
+
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+
+</tr>
+</thead>
+<tbody class="xyz" id="tbody1"> 
+</tbody> 
+</table>
+     </div>
+</body>
+<script>
+var data1;
+function display(){
+    $.ajax({
+        type:"GET",
+        url:"https://jsonplaceholder.typicode.com/users",
+
+        success:function(data){
+             data1 = data;
+            console.log(data1);
+            var std="";
+        for(var i=0;i<=9;i++){
+            std+="<tr><td> <a href='jq1sub.html?userid="+data[i].id+" '>"+data[i].id+" </a></td><td>"+data[i].name+"</td><td>"+data[i].email+"</td><td>"+data[i].phone+"</td></tr>";
+
+        }
+
+                    $("#tbody1").html(std);
+        }
+
+            })
+}
+    
+</script>
+</html>

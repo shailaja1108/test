@@ -1,0 +1,53 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container text-right">
+        <button class="btn btn-success my-3" onclick="display()">generate</button>
+    </div>
+    <div class="container mt-5">
+        <table class="table table-stripped">
+            <thead>
+                <tr class="text-white bg-secondary">
+                    <th>sid</th>
+                    <th>sname</th>
+                    <th>phone</th>
+                </tr>
+            </thead>
+            <tbody class="xyz" id="tbody1">
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    function display() {
+        var std;
+        var http = new XMLHttpRequest();
+        http.open('GET', 'https://jsonplaceholder.typicode.com/users');
+        http.responseType = "json";
+        http.send();
+        var a = " ";
+        http.onload = function () {
+            std = http.response;
+            std.forEach(function (val, ind) {
+                a = a + "<tr><td> <a href='3.html'>" + val.id + "</a></td><td>" + val.name + "</td><td>" + val.phone + "</td></tr>";
+            })
+
+            document.getElementById("tbody1").innerHTML = a;
+        }
+        var x = document.getElementById("tbody1").className;
+        console.log(x);
+        var y = x.indexOf("d-none");
+        if (y<=0) {
+            document.getElementById("tbody1").classList.add("d-none");
+
+        }
+        else {
+            document.getElementById("tbody1").classList.remove("d-none");
+
+        }
+    }
+
+</script>
+</html>

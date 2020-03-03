@@ -1,0 +1,42 @@
+<html>
+<head>
+
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+var Student=function(){
+    this.fname="shailaja";
+    this.lname="nanda";
+    this.dob="11-08-1996";
+    this.age=23;
+    this.place="jangaon";
+    this.email="shailu@gmail.com";
+this.mobileno=8787878787;
+    this.getfullname=function(){
+        console.log(this.fname+"  "+this.lname);
+    }
+this.getemail=function(){
+    console.log(this.email+" ");
+}
+this.getaddress=function(city,state,country){
+    console.log(this.place+"  "+city+" "+state+" "+country);
+}
+this.getstudentdetailes=function(){
+console.log(this.fname+" "+this.lname+": "+this.dob+" :"+this.age+" :"+this.place+" :"+this.mobileno+" :"+this.email)
+}
+
+}
+
+var x=new Student();
+x.getfullname();
+x.getemail();
+x.getaddress.call(x,"Warangal","Ts","India");
+x.getstudentdetailes();
+</script>
+</body>
+</head>
+</html>

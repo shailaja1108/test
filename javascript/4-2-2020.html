@@ -1,0 +1,49 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+</head>
+<body>
+<div class="container bg-secondary d-flex justify-content-between">
+    <img src="#" alt="logo"/>
+    <a href="logout.html">logout</a> 
+</div>
+<div class="container text-right">
+    <button class="btn btn-success mt-4" id=abc onclick="display()" >Generate</button> 
+    </div>
+    <div class="container h-9 w-5">
+    <table class="table table-stripped">
+        <thead>
+        <tr class="text-white bg-primary">
+
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+
+</tr>
+</thead>
+<tbody class="xyz" id="tbody1"> 
+</tbody> 
+</table>
+     </div>
+</body>
+<script>
+function display(){
+    var http=new XMLHttpRequest();
+    http.open('GET','https://jsonplaceholder.typicode.com/users');
+    http.responseType='json';
+    http.send();
+    var a=" ";
+    http.onload=function(){
+        var std=http.response;
+        std.forEach(function(val,index){
+            a+="<tr><td> <a href='sub7.html?userid="+val.id+" '>"+val.id+" </a></td><td>"+val.name+"</td><td>"+val.email+"</td><td>"+val.phone+"</td>"+"</tr>";
+            document.getElementById("tbody1").innerHTML=a;
+})
+    
+    }
+    
+}
+</script>
+</body>
+</html>

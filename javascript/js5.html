@@ -1,0 +1,55 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>">
+</head>
+<body>=
+<div class="container bg-primary m-3 p-5">
+<div class="d-flex  justify-content-center">
+<h3>LOGIN FORM</h3>
+</div>
+<div class="form-group" >
+<label> User name</label>
+<input type="text" class="form-control"placeholder="please enter the valid user name"/>
+</div>
+<div class="form-group" >
+<label> password</label>
+<input type="text" class="form-control"placeholder="please enter the valid password"/>
+</div>
+<div>
+<button class=" btn btn-success" onclick="displaymessage()" id="xyz">login</button>
+<button class=" btn btn-warning ml-5" onclick="displaym()" id="abc">reset</button>
+</div>
+</div>
+</body>
+<script>
+function username(){
+    var username=document.getElementById("username").value;
+    var x=isNaN(username)
+    if(x==false){
+        console.log("valid username")
+    }
+else{
+    console.log("invalid username")
+    }
+}
+function password(){
+    var password=document.getElementById("password").value;
+    var x=isNaN(username)
+    if(x==false){
+        console.log("valid password")
+    }
+else{
+    console.log("invalid password")
+    }
+}
+function displaymessage(){
+    var username=document.getElementById("username").value;
+    console.log(username)
+
+}
+function displaym(){
+    var username=document.getElementById("username").value="";
+    var password=document.getElementById("password").value="";
+}
+</script>
+</html>

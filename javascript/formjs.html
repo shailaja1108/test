@@ -1,0 +1,158 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="styelesheet" href="formjssub.css" />
+    <script src="https://kit.fontawesome.com/f8c2e2119e.js" crossorigin="anonymous"></script>
+</head>
+
+<div>
+    <div class="header-container d-flex justify-content-between bg-primary text-white m-2  p-2 ">
+        <img src="" alt="logo" />
+        <a href="logout" rel="logout">logout</a>
+    </div>
+    <div class="container  bg-warning d-flex justify-content-around m-3 p-2 ">
+        <a href="users.html">users</a>
+        <a href="service.html">service</a>
+        <a href="about.html">about</a>
+    </div>
+
+    <div class="body-container" id="body">
+        <h3 class="login text-center">LOGIN FORM</h3>
+        <div class="col-md-6">
+            <div class="form-group">
+                <div> User id</div>
+                <input class="form-control" id="user" placeholder="please enter the valid user id" value="" />
+            </div>
+
+            <div class="form-group">
+                <div> password</div>
+                <input class="form-control" id="pass" placeholder="please enter the valid password" value="" />
+            </div>
+
+            <div class="form-group">
+                <span> city</span>
+                <input class="form-control" />
+                <select id="city">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <span> district</span>
+                <input class="form-control" />
+                <select id="district">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <span>website</span>
+                <input class="form-control" id="website" />
+            </div>
+        </div>
+    </div>
+
+    <div class="container2 ml-5 mt-2  text-left">
+        <div class="col-md-6 ">
+            <div class="form-group">
+                <div>name</div>
+                <div>
+                    <input class="form-control" id="name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <span>Email id</span>
+                <input class="form-control" id="email" />
+            </div>
+
+            <div class="form-group">
+                <span> street1</span>
+                <input class="form-control" id="street1" value="" />
+            </div>
+
+            <div class="form-group">
+                <span> street2</span>
+                <input class="form-control" id="street2" />
+            </div>
+
+            <div class="form-group">
+                <span>country</span>
+                <input class="form-control" id="user" value="" />
+                <select id="country">
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                    <option></option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+    <div class="button d-flex justify-content-between">
+        <button class="btn btn-success m-3 my-3" onclick="displaysub()" id="xyz">submit</button>
+        <button class="btn btn-danger m-3  my-3" onclick="displaycan()" id="abc">cancel</button>
+    </div>
+</div>
+</body>
+
+<script>
+    document.getElementById("user").value = '';
+    function displaysub() {
+        document.getElementById("user").value = '';
+        var b = document.getElementById("pass").value;
+        var c = document.getElementById("mobile").value;
+        var d = document.getElementById("city").value;
+        var e = document.getElementById("district").value;
+        var f = document.getElementById("name").value;
+        var g = document.getElementById("email").value;
+        var h = document.getElementById("street1").value;
+        var i = document.getElementById("street2").value;
+        var j = document.getElementById("country").value;
+        var k = document.getElementById("website").value;
+        console.log(a);
+        console.log(b);
+    }
+    var abc = {
+        userid: "a",
+        password: "b",
+        mobile: "c",
+        city: "d",
+        district: "e",
+        name: "f",
+        email: "g",
+        street1: "h",
+        street2: "i",
+        country: "j",
+        website: "k"
+    }
+    var std;
+    var http = new XMLHttpRequest();
+    http.open('POST', 'https://jsonplaceholder.typicode.com/users');
+    http.responseType = 'json';
+    http.send(abc);
+
+    http.onload = function () {
+        std = http.response;
+        console.log(std);
+    }
+
+</script>
+
+</html>

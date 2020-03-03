@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+<div class="container-fluid d-none bg-danger" style="color:white;"id="abc">
+    <div style="text-align:center;">
+    plz enter the valid information
+    <div class="text-right">
+        <button class="btn btn-success"onclick="hide();" id="close">close</button>
+        </div>
+        </div>
+    </div>
+</head>
+<body>
+<div class="container bg-primary my-3 p-5">
+<div class="d-flex  justify-content-center">
+<h3>LOGIN FORM</h3>
+</div>
+<div class="form-group">
+<label> User name</label>
+<input type="username" class="form-control"placeholder="please enter the valid user name" OnkeyUp="username();"id="user"/>
+</div>
+<div class="form-group">
+<label> password</label>
+<input type="password" class="form-control"placeholder="please enter the valid password" OnkeyUp="password();"id="pass"/>
+</div>
+<div>
+<button class=" btn btn-success" onclick="display();" id="xyz">submit</button>
+<button class=" btn btn-warning ml-5" onclick="displayreset();">cancel</button>
+</div>
+</div>
+<script>  
+  function hide(){
+    document.getElementById("abc").classList.add("d-none");
+  }
+    function display(){
+        var x=document.getElementById("user").value="";
+        var a=document.getElementById("pass").value="";
+        document.getElementById("abc").classList.remove("d-none");
+    }
+    function displayreset(){
+        var y=document.getElementById("user").value="";
+        var y=document.getElementById("pass").value="";
+    }
+</script>
+</body>
+</html>

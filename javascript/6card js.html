@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+</head>
+<body>
+<div class=" card-header bg-secondary text-center text-white h-4 m-4"> VBM</div>
+<div class="container text-right">
+    <button class="btn btn-success mt-4" id=abc onclick="display()" >Generate</button> 
+    </div>
+    <div class="card-body w-5">
+    <table class="table table-stripped">
+        <thead>
+        <tr class="text-white bg-primary">
+            <th>city</th>
+            <th>street</th>
+            <th>suite</th>
+            <th>zipcode</th>
+            <th>address</th>
+</tr>
+</thead>
+<tbody class="xyz" id="tbody1"> 
+</tbody> 
+</table>
+     </div>
+</body>
+<script>
+function display(){
+    var http=new XMLHttpRequest();
+    http.open('GET','https://jsonplaceholder.typicode.com/users');
+    http.send();
+    http.responseType='json';
+    var a=" ";
+    http.onload=function(){
+        std=http.response;
+        std.forEach(function(val,index){
+            a=a+"<tr><td>"+val.address.city+"</td><td>"+val.address.street+"</td><td>"+val.address.suite+"</td><td>"+val.address.zipcode+"</td><td>"+val.address+"</td></tr>";
+            document.getElementById("tbody1").innerHTML=a;
+});body
+    
+    }
+
+    var x=document.getElementById("t1").className;
+    console.log(x);
+    var y=x.indexOf("d-none");
+    if(y==-1){
+        document.getElementById("tbody1").classList.add("d-none");
+    }
+    else{
+        document.getElementById("tbody1").classList.remove("d-none");
+
+    }
+}
+</script>
+     <div class=" card-footer bg-warning text-center text-white  h-4 m-4">THANK YOU</div>
+
+</html>

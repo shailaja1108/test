@@ -1,0 +1,24 @@
+<html>
+<head>
+<body>
+<form action="message.html">
+<input id="uname" placeholder="uname" type="text" onkeyup="username();"/><br>
+<input id="pass" placeholder="password" type="password" onkeyup="password();"/><br>
+<button type="submit">submit</button>
+</form>
+</body>
+</head>
+<script>
+function validate(){
+    var username=document.getElementById("uname");
+    var password=document.getElementById("pass");
+    if(username.value==""||password.value==""){
+        alert("no blank values allowed");
+        return false;
+    }
+    else{
+        true;
+    }
+}
+</script>
+</html>
